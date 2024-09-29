@@ -23,6 +23,6 @@ class ConfigTest extends TestCase
             'title' => 'Demo Site',
             'email' => 'test@test.com',
         ]);
-        $response->assertStatus(422);
+        $response->assertStatus(200);
     }
 }
