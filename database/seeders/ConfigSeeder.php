@@ -3,25 +3,18 @@
 namespace Database\Seeders;
 
 use App\Models\Config;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ConfigSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        Config::factory()->create([
+        //
+        Config::create([
             'title' => 'Laravel+Vue3构建的平台系统',
             'config' => config('system'),
             'logo' => fake()->imageUrl(640, 480),

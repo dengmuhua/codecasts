@@ -1,27 +1,23 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Factories;
 
-use App\Models\Config;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-class DatabaseSeeder extends Seeder
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Config>
+ */
+class ConfigFactory extends Factory
 {
     /**
-     * Seed the application's database.
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
      */
-    public function run(): void
+    public function definition(): array
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        Config::factory()->create([
+        return [
+            //
             'title' => 'Laravel+Vue3构建的平台系统',
             'config' => config('system'),
             'logo' => fake()->imageUrl(640, 480),
@@ -32,6 +28,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
             'keywords' => 'Laravel+Vue3',
             'description' => 'Laravel+Vue3构建的平台系统',
-        ]);
+        ];
     }
 }
