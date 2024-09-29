@@ -16,7 +16,7 @@ class CodeServices
      */
     public function send(string|int $account): mixed
     {
-        $action = filter_var($account, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        $action = filter_var($account, FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
         if ($cache = Cache::get($account)){
             $diff = $cache['sendTime']->diffInSeconds(now());
             $timeout = config('system.code.timeout');
