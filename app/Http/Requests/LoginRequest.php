@@ -34,7 +34,7 @@ class LoginRequest extends BaseRequest
     }
 
     /**
-     *
+     * RETURN FIELD NAME
      * @return string
      *
      */
@@ -43,6 +43,10 @@ class LoginRequest extends BaseRequest
         return filter_var(request('account'), FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
     }
 
+    /**
+     * CUSTOM RULES
+     * @return string[]|void
+     */
     protected function accountRules(){
         switch ($this->fieldName()) {
             case 'email':
