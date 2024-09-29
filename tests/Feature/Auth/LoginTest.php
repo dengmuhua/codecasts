@@ -47,4 +47,11 @@ class LoginTest extends TestCase
         $response = $this->post('/api/login', ['account' => '3345678@qq.com', 'password' => 'password']);
         $response->assertSessionHasErrors('account');
     }
+
+    #[Test] // Login by mobile[手机登录]
+    public function loginByMobile(){
+        $user = User::factory()->create(['mobile' => '136' . $this->faker()->randomNumber(8)]);
+        $response = $this->postJson('/api/login', ['account' => $user->mobile, 'password' => 'password']);
+        $response->assertOk();
+    }
 }

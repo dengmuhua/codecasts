@@ -13,6 +13,6 @@ class UserServices
      */
     public function fieldName(): string
     {
-        return filter_var(request('account'), FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        return filter_var(request('account'), FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
     }
 }

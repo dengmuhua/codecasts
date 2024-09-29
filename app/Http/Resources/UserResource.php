@@ -10,7 +10,7 @@ class UserResource extends JsonResource
     {
         return  [
                 'id' => $this->id,
-                'phone' => $this->when(true, $this->phone),
+                'mobile' => $this->when(true, $this->mobile),
             ] + parent::toArray($request);
     }
 }

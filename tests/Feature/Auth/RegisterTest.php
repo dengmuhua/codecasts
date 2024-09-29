@@ -64,11 +64,5 @@ class RegisterTest extends TestCase
         $response->assertJsonValidationErrors(['password']);
     }
 
-    #[Test] // Login by mobile[手机登录]
-    public function loginByMobile(){
-        $user = User::factory()->create(['phone' => '136' . $this->faker()->randomNumber(8)]);
-        $response = $this->postJson('/api/login', ['account' => $user->phone, 'password' => 'password']);
-        $response->assertOk();
-    }
 
 }

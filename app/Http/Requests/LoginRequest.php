@@ -40,14 +40,14 @@ class LoginRequest extends BaseRequest
      */
     protected function fieldName(): string
     {
-        return filter_var(request('account'), FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        return filter_var(request('account'), FILTER_VALIDATE_EMAIL) ? 'email' : 'mobile';
     }
 
     protected function accountRules(){
         switch ($this->fieldName()) {
             case 'email':
                 return ['required', 'email'];
-            case  'phone':
+            case  'mobile':
                 return ['required', 'regex:/^\d{11}$/'];
         }
     }

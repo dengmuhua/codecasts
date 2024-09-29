@@ -35,7 +35,7 @@ class RegisterRequest extends BaseRequest
     {
         if (filter_var(request('account'), FILTER_VALIDATE_EMAIL))
             return ['required', 'email', 'unique:users,email'];
-        return ['required', 'regex:/^\d{11}$/', 'unique:users,phone'];
+        return ['required', 'regex:/^\d{11}$/', 'unique:users,mobile'];
     }
 
     /**
